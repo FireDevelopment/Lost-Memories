@@ -24,11 +24,11 @@ If that doesnt work, try changing py to `python`, `py3`, or `python3`
 
 ## File Description:
 Assets:
--Images - Contains the images for the game
--Music - Contains the music played in game 
+- Images - Contains the images for the game
+- Music - Contains the music played in game 
 please read the liscnese for more information
--Levels - Contains the level images, and terminal text
--Sprite - Contains the sprites used in game
+- Levels - Contains the level images, and terminal text
+- Sprite - Contains the sprites used in game
 - Fonts - Contains the font used in the terminals
 
 
