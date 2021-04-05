@@ -15,6 +15,9 @@ You press `R` to activate Terminals
 You might need to get a key to unlock the portal
 You go thorough the portal to get to the next level.
 Press P to pause
+Press M to mute sound anywhere
+Press S to skip anything
+Press L to get the players current location
 
 ## How do I run this?
 1. Install `Python 3.something`
