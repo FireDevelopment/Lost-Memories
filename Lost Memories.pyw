@@ -28,6 +28,8 @@ clock = pygame.time.Clock()
 pygame.mixer.pre_init(44100, -16, 2, 1024)
 pygame.init()
 
+sound = 1
+
 pygame.mixer.music.load('./assets/music/main.mp3')
 pygame.mixer.music.play(-1)
 
@@ -86,11 +88,25 @@ d4 = pygame.image.load('./assets/sprite/dead4.png')
 #sound effects
 select = pygame.mixer.Sound("./assets/music/clap.wav")
 
+#functions
+def mutesound():
+    pygame.mixer.music.pause()
+
+def unpause():
+    pygame.mixer.music.unpause()
+
 while run:
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_m:
+                    if sound == 1:
+                        mutesound()
+                        sound = 0
+                    elif sound == 0:
+                        sound = 1
+                        unpause()
                 if menu == 1:
                     if event.key == pygame.K_r:
                         select.play()
@@ -149,7 +165,7 @@ while run:
                         menu = 1
                         pygame.mixer.music.load('./assets/music/main.mp3')
                         pygame.mixer.music.play(-1)
-                if menu == 1 and event.key == pygame.K_s:
+                if menu == 1 or menu == 2 and event.key == pygame.K_s:
                         pygame.mixer.music.stop()
                         menu = 3
                         level = 1
