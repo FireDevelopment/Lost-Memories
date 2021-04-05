@@ -1,0 +1,13 @@
+Made for CodeFriend's Game Jam
+A server to chill out, and code
+Invite Link Here: https://discord.gg/m2eRCJVhZT
+
+
+Credits:
+Code, Images, 3 of the songs:
+RedFire
+
+Other Music:
+Music.mp3: https://www.newgrounds.com/audio/listen/657512
+Clap.wav: https://mixkit.co/free-sound-effects/clap/
+Victoryc.mp3: https://www.newgrounds.com/audio/listen/984392
