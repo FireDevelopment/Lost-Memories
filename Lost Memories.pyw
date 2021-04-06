@@ -165,7 +165,8 @@ while run:
                         menu = 1
                         pygame.mixer.music.load('./assets/music/main.mp3')
                         pygame.mixer.music.play(-1)
-                if menu == 1 or menu == 2 and event.key == pygame.K_s:
+                if menu == 1 or menu == 2:
+                    if event.key == pygame.K_s:
                         pygame.mixer.music.stop()
                         menu = 3
                         level = 1
