@@ -136,9 +136,12 @@ while run:
                     if event.key == pygame.K_p:
                         bfc = 0
                         menu = 6
-                    if event.key == pygame.K_s:
+                    if event.key == pygame.K_n:
                         bfc = 0
                         menu = 4
+                    if event.key == pygame.K_b:
+                        bfc = 0
+                        menu = 9
                     if event.key == pygame.K_l:
                         print(f"{px+offset}, {py+yoffset}")
                     if event.key == pygame.K_r:
@@ -166,7 +169,7 @@ while run:
                         pygame.mixer.music.load('./assets/music/main.mp3')
                         pygame.mixer.music.play(-1)
                 if menu == 1 or menu == 2:
-                    if event.key == pygame.K_s:
+                    if event.key == pygame.K_n:
                         pygame.mixer.music.stop()
                         menu = 3
                         level = 1
@@ -197,7 +200,7 @@ while run:
        keys = pygame.key.get_pressed()
        blocked = False
        screensurf = pygame.display.get_surface()
-       if keys[pygame.K_RIGHT]:
+       if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
            direction = 'right'
            for num in range(py, py+21):
                 bcol = screensurf.get_at((px+21, num))[:3]
@@ -208,7 +211,7 @@ while run:
                    px+=1
                else:
                    offset = offset+1
-       if keys[pygame.K_LEFT]:
+       if keys[pygame.K_LEFT] or keys[pygame.K_a]:
            direction = 'left'
            for num in range(py, py+21):
                 bcol = screensurf.get_at((px-1, num))[:3]
@@ -219,7 +222,7 @@ while run:
                    offset -= 1
                else:
                    px-=1
-       if keys[pygame.K_DOWN]:
+       if keys[pygame.K_DOWN] or keys[pygame.K_s]:
            direction = 'down'
            for num in range(px-1, px+21):
                 bcol = screensurf.get_at((num, py+21))[:3]
@@ -230,7 +233,7 @@ while run:
                    py+=1
                else:
                     yoffset+=1
-       if keys[pygame.K_UP]:
+       if keys[pygame.K_UP] or keys[pygame.K_w]:
            direction = 'up'
            for num in range(px-1, px+21):
                 bcol = screensurf.get_at((num, py-1))[:3]
@@ -489,6 +492,26 @@ while run:
             win.blit(bf, (0,0))
     if menu == 8:
         win.blit(end, (0,0))
+    if menu == 9:
+        bfc+=1
+        print(bfc)
+        if bfc == 100:
+            direction = 'none'
+            cc = 0
+            cxpos = 0
+            cypos = 0
+            level-=1
+            if level == 0:
+                level = 1
+            if level == 4 or level == 6:
+                lock = True
+            px = 100
+            py = 100
+            offset = 0
+            yoffset = 0
+            menu = 3
+        else:
+            win.blit(bf, (0,0))
         
 
     clock.tick(144) #144 fps
