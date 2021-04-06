@@ -440,6 +440,7 @@ while run:
         bfc+=1
         print(bfc)
         if bfc == 100:
+            tia = False
             direction = 'none'
             cc = 0
             cxpos = 0
@@ -493,6 +494,7 @@ while run:
     if menu == 8:
         win.blit(end, (0,0))
     if menu == 9:
+        tia = False
         bfc+=1
         print(bfc)
         if bfc == 100:
